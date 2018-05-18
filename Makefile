@@ -13,6 +13,12 @@ ifdef app_name
 export container_name=${app_name}-${JOB_ID}-c${BUILDKITE_PARALLEL_JOB}
 endif
 
+# PROJECT_NAME set by buildpipe
+check-env:
+ifndef PROJECT_NAME
+	$(error PROJECT_NAME is undefined)
+endif
+
 # implemented in project
 .PHONY: test
 
@@ -36,7 +42,7 @@ run-without-build:
 run: build run-without-build
 
 deploy-%: check-env
-	@echo "Deploying $PROJECT_NAME to $*"
+	@echo "Deploying ${PROJECT_NAME} to $*"
 
 # exit hook to remove unused networks
 docker-network-prune:
