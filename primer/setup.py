@@ -16,5 +16,5 @@ setup(
             'pytest-cov',
             'swagger_tester',
         ]
-    }
+    },
 )
