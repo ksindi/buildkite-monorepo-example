@@ -5,7 +5,7 @@ Example monorepo using third-party buildkite tool [buildpipe](https://github.com
 The monorepo config lives in [buildpipe.yml](https://github.com/ksindi/buildpipe-monorepo-example/blob/master/buildpipe.yml).
 You can see there are 3 projects defined and deploy steps only happen during Eastern time business hours.
 
-The config shows common steps the projects share with their associated commands. The commands are standardized using a `make` and taking advantage of inheritance with Makefiles.
+The config shows steps the projects share with their associated commands. The commands are standardized using `make` and Makefile inheritance.
 
 ## Getting started
 
