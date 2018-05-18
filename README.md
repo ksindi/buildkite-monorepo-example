@@ -12,14 +12,14 @@ You can see there are 3 projects defined and deploy steps only happen during Eas
     buildpipe -i buildpipe.yml -o pipeline.yml
     buildkite-agent pipeline upload pipeline.yml
     ```
-![Create pipeline](images/0-create-pipeline.png)
+    ![Create pipeline](images/0-create-pipeline.png)
 1. Generate deploy key and change permissions
     ```bash
     make generate-deploy-ssh-key
     chmod 600 ~/buildkite-secrets/id_rsa_buildkite_git
     ```
 1. Add the public key `~/buildkite-secrets/id_rsa_buildkite_git.pub` to your Github repo under Settings > Deploy keys.
-![Add deploy key](images/1-add-deploy-key.png)
+    ![Add deploy key](images/1-add-deploy-key.png)
 1. Run the buildkite agents locally:
     ```bash
     export BUILDKITE_AGENT_TOKEN=<token>
@@ -40,6 +40,6 @@ The following examples shows how the pipeline creation is dynamic depending on w
 were changes by git.
 
 1. Updating primer project in master only triggers the primer pipeline to run
-![Add deploy key](images/2-update-primer.png)
+    ![Add deploy key](images/2-update-primer.png)
 1. Updating both primer and hubots projects in master triggers both pipelines
-![Add deploy key](images/3-update-primer-and-hubot.png)
+    ![Add deploy key](images/3-update-primer-and-hubot.png)
