@@ -3,7 +3,7 @@
 Example monorepo using buildkite tool [buildpipe](https://github.com/ksindi/buildpipe/).
 
 The monorepo config lives in [buildpipe.yml](https://github.com/ksindi/buildpipe-monorepo-example/blob/master/buildpipe.yml).
-You can see there are 3 projects defined.
+You can see there are 3 projects defined and deploy steps only happen during Eastern time business hours.
 
 ## Getting started
 
