@@ -33,7 +33,7 @@ The config shows steps the projects share with their associated commands. The co
     ssh-add ~/buildkite-secrets/id_rsa_buildkite_git
 
     # Run agent in a docker container scaled to the number of cpus
-    make local
+    cd buildkite-agent/ && make local
     ```
 You should see the number of agents at the top bar in buildkite appear
 
