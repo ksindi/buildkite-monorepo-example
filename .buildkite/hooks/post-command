@@ -1,0 +1,7 @@
+#!/bin/bash -ue
+
+if [[ -n $MAKE_CLEANUP_TARGET ]]
+then
+  echo "~~~ Running cleanup command"
+  pushd $PROJECT_PATH && make clean && popd
+fi

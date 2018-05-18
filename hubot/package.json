@@ -1,0 +1,12 @@
+{
+  "name": "hubot",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hubot app",
+  "dependencies": {
+    "hubot": "~2",
+    "hubot-help": "^0.1.1",
+    "hubot-slack": "~4",
+    "slack-node": "^0.2.0"
+  }
+}

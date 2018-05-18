@@ -1,0 +1,9 @@
+version: '3'
+services:
+  bk-agent:
+    build: .
+    environment:
+     - BUILDKITE_AGENT_TOKEN=${BUILDKITE_AGENT_TOKEN}
+    volumes:
+      - ~/buildkite-secrets/:/buildkite-secrets/
+      - /var/run/docker.sock:/var/run/docker.sock

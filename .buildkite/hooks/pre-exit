@@ -1,0 +1,6 @@
+#!/bin/bash -ue
+
+# delete stale local and remote branches on build exit
+if [ "$BUILDKITE_BRANCH" = "master" ]; then
+    make docker-network-prune
+fi

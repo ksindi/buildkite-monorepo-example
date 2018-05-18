@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  title: Primer API
+  version: '1.0'
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+  - https
+paths:
+  /health:
+    get:
+      tags: [Health]
+      operationId: primer.api.health.search
+      summary: Health check
+      responses:
+        '200':
+          description: Status message from server describing current health
+  /primality:
+    get:
+      tags: [Primality]
+      summary: Return true if number is prime
+      operationId: primer.api.primality.search
+      parameters:
+        - in: query
+          name: n
+          type: integer
+          required: true
+          minimum: 2
+          x-example: 42
+      responses:
+        '200':
+          description: Primality of number
+          schema:
+            type: object
+            properties:
+              is_prime:
+                type: boolean
