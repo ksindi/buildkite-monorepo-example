@@ -7,12 +7,13 @@ You can see there are 3 projects defined and deploy steps only happen during Eas
 
 ## Getting started
 
-### Create Buildkite pipeline
-1. Create a pipeline adding the following initial buildpipe step:
+1. Create a pipeline adding the following initial step
+    ```bash
+    buildpipe -i buildpipe.yml -o pipeline.yml
+    buildkite-agent pipeline upload pipeline.yml
+    ```
 ![Create pipeline](images/0-create-pipeline.png)
-
-### Add deploy key to Github
-1. Generate deploy key and change permission:
+1. Generate deploy key and change permissions
     ```bash
     make generate-deploy-ssh-key
     chmod 600 ~/buildkite-secrets/id_rsa_buildkite_git
@@ -35,7 +36,10 @@ You can see there are 3 projects defined and deploy steps only happen during Eas
 You should see the number of agents at the top bar in buildkite appear
 
 ## Examples
+The following examples shows how the pipeline creation is dynamic depending on which projects
+were changes by git.
+
 1. Updating primer project in master only triggers the primer pipeline to run
 ![Add deploy key](images/2-update-primer.png)
-2. Updating both primer and hubots projects in master triggers both pipelines
+1. Updating both primer and hubots projects in master triggers both pipelines
 ![Add deploy key](images/3-update-primer-and-hubot.png)
