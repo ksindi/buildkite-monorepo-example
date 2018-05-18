@@ -7,9 +7,10 @@ You can see there are 3 projects defined.
 
 ## Set up
 
-1. Generate deploy key:
+1. Generate deploy key and change permission:
     ```bash
     make generate-deploy-ssh-key
+    chmod 600 ~/buildkite-secrets/id_rsa_buildkite_git
     ```
 1. Add the public key your Github repo under Settings > Deploy keys.
 1. Run the agents:

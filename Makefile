@@ -1,5 +1,5 @@
 # set in buildkite agent
-ifdef BUILDKITE
+ifdef BUILDKITE_JOB_ID
 export BUILD_GIT_TAG=bk${BUILDKITE_BUILD_NUMBER}
 export JOB_ID:=${BUILDKITE_JOB_ID}
 export COMPOSE_PROJECT_NAME:=${BUILDKITE_JOB_ID}
