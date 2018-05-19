@@ -1,4 +1,4 @@
-# Buildpipe Monorepo Example
+# Buildkite Monorepo Example
 
 Example monorepo using third-party buildkite tool [buildpipe](https://github.com/ksindi/buildpipe/).
 
