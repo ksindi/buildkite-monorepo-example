@@ -39,7 +39,7 @@ You should see the number of agents at the top bar in buildkite appear
 
 ## Examples
 The following examples shows how the pipeline creation is dynamic depending on which projects
-were changes by git.
+were changed.
 
 1. Updating primer project in master only triggers the primer pipeline to run
     ![Add deploy key](images/2-update-primer.png)
