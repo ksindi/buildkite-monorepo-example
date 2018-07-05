@@ -12,8 +12,7 @@ RUN apk add --no-cache \
 
 RUN pip3 install --upgrade pip setuptools
 RUN python3 -m ensurepip && \
-    pip3 install setuptools \
-      buildpipe
+    pip3 install buildpipe==0.2.5
 
 RUN update-ca-certificates
 
