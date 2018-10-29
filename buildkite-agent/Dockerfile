@@ -16,7 +16,5 @@ RUN python3 -m ensurepip && \
 
 RUN update-ca-certificates
 
-COPY hooks/ /buildkite/hooks
-
 ENTRYPOINT []
 CMD ["buildkite-agent-entrypoint", "start"]

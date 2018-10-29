@@ -4,6 +4,7 @@ services:
     build: .
     environment:
      - BUILDKITE_AGENT_TOKEN=${BUILDKITE_AGENT_TOKEN}
+     - SSH_AUTH_SOCK=/ssh-agent
     volumes:
-      - ~/buildkite-secrets/:/buildkite-secrets/
+      - ${SSH_AUTH_SOCK}:/ssh-agent
       - /var/run/docker.sock:/var/run/docker.sock
