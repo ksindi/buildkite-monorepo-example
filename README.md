@@ -17,18 +17,27 @@ The config shows steps the projects share with their associated commands. The co
     ![Create pipeline](images/0-create-pipeline.png)
 1. Generate deploy key and change permissions
     ```bash
+    # Start ssh agent in the background
+    eval "$(ssh-agent -s)"
+
+    # Generate ssh key
     make generate-deploy-ssh-key
     chmod 600 ~/.ssh/id_rsa_buildkite_git
+
+    # Create agent socket
+    ssh-agent -a ~/.ssh/ssh-agent.sock
+
+    # Add ssh key
+    ssh-add ~/.ssh/id_rsa_buildkite_git
+
+    # Test key works
+    # https://developer.github.com/v3/guides/using-ssh-agent-forwarding/
+    ssh -T git@github.com
     ```
-1. Add the public key `~/buildkite-secrets/id_rsa_buildkite_git.pub` to your Github repo under Settings > Deploy keys.
+1. Add the public key `~/.ssh/id_rsa_buildkite_git.pub` to your Github repo under Settings > Deploy keys.
     ![Add deploy key](images/1-add-deploy-key.png)
 1. Run the buildkite agents locally:
     ```bash
-    # Start ssh agent in the background
-    eval "$(ssh-agent -s)"
-    ssh-agent -a ~/.ssh/ssh-agent.sock
-    ssh-add ~/.ssh/id_rsa_buildkite_git
-
     # Make sure to add to .bashrc
     export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
     export BUILDKITE_AGENT_TOKEN=<token>
@@ -36,9 +45,10 @@ The config shows steps the projects share with their associated commands. The co
     # Run agent in a docker container scaled to the number of cpus
     cd buildkite-agent/ && make local
     ```
-You should see the number of agents at the top bar in buildkite appear
+You should see the number of agents at the top bar in Buildkite appear.
 
 ## Examples
+
 The following examples shows how the pipeline creation is dynamic depending on which projects
 were changed.
 
