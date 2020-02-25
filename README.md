@@ -1,6 +1,6 @@
 # Buildkite Monorepo Example
 
-Example monorepo using third-party buildkite tool [buildpipe](https://github.com/ksindi/buildpipe/).
+Example monorepo using third-party buildkite tool [buildpipe](https://github.com/jwplayer/buildpipe/).
 
 The monorepo config lives in [buildpipe.yml](./buildpipe.yml).
 You can see there are 3 projects defined and deploy steps only happen during Eastern time business hours.
