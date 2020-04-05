@@ -1,0 +1,38 @@
+steps:
+  - label: test
+    env:
+      MAKE_CLEANUP_TARGET: true
+      BUILDPIPE_SCOPE: project
+    command:
+      - cd $$BUILDPIPE_PROJECT_PATH
+      - make test
+  - wait
+  - label: build
+    env:
+      BUILDPIPE_SCOPE: project
+    branches: "master"
+    command:
+      - cd $$BUILDPIPE_PROJECT_PATH
+      - make build
+  - wait
+  - label: tag-release
+    branches: "master"
+    command:
+      - make tag-release
+  - wait
+  - label: deploy-stg
+    env:
+      BUILDPIPE_SCOPE: project
+    branches: "master"
+    command:
+      - make deploy-stg
+  - wait
+  - block: ":rocket: Release!"
+    branches: "master"
+  - wait
+  - label: deploy-prd
+    env:
+      BUILDPIPE_SCOPE: project
+    branches: "master"
+    command:
+      - make deploy-prd
