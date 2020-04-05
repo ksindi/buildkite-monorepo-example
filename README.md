@@ -1,9 +1,9 @@
 # Buildkite Monorepo Example
 
-Example monorepo using third-party buildkite tool [buildpipe](https://github.com/jwplayer/buildpipe/).
+Example monorepo using buildkite plugin [buildpipe](https://github.com/jwplayer/buildpipe-buildkite-plugin/).
 
-The monorepo config lives in [buildpipe.yml](./buildpipe.yml).
-You can see there are 3 projects defined and deploy steps only happen during Eastern time business hours.
+The monorepo config lives in [.buildkite/pipeline.yml](./.buildkite/pipeline.yml).
+You can see there are 3 projects defined.
 
 The config shows steps the projects share with their associated commands. The commands are standardized using `make` and Makefile inheritance.
 
@@ -13,7 +13,6 @@ The config shows steps the projects share with their associated commands. The co
     ```bash
     buildkite-agent pipeline upload
     ```
-    ![Create pipeline](images/0-create-pipeline.png)
 1. Generate deploy key and change permissions
     ```bash
     # Start ssh agent in the background
