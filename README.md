@@ -9,9 +9,11 @@ The config shows steps the projects share with their associated commands. The co
 
 ## Getting started
 
-1. Create a pipeline adding the following initial step
-    ```bash
-    buildkite-agent pipeline upload
+1. Create a pipeline adding the following initial step in the console
+    ```yaml
+     steps:
+      - command: "buildkite-agent pipeline upload"
+        label: ":pipeline:"
     ```
 1. Generate deploy key and change permissions
     ```bash
