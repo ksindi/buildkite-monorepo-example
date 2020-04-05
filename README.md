@@ -11,8 +11,7 @@ The config shows steps the projects share with their associated commands. The co
 
 1. Create a pipeline adding the following initial step
     ```bash
-    buildpipe -i buildpipe.yml -o pipeline.yml
-    buildkite-agent pipeline upload pipeline.yml
+    buildkite-agent pipeline upload
     ```
     ![Create pipeline](images/0-create-pipeline.png)
 1. Generate deploy key and change permissions
@@ -53,6 +52,6 @@ The following examples shows how the pipeline creation is dynamic depending on w
 were changed.
 
 1. Updating primer project in master only triggers the primer pipeline to run
-    ![Add deploy key](images/2-update-primer.png)
+    ![Update single project](images/2-update-primer.png)
 1. Updating both primer and hubot projects in master triggers both pipelines
-    ![Add deploy key](images/3-update-primer-and-hubot.png)
+    ![Update multiple projects](images/3-update-primer-and-hubot.png)
