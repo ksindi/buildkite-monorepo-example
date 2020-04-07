@@ -1,3 +1,17 @@
+projects:
+  - label: buildkite-agent
+    path: buildkite-agent
+    skip:
+      - test
+      - deploy*
+  - label: hubot
+    path: hubot
+    skip:
+      - test
+  - label: primer
+    path: primer
+    skip:
+      - deploy-stg
 steps:
   - label: test
     env:
