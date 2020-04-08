@@ -9,11 +9,13 @@ The config shows steps the projects share with their associated commands. The co
 
 ## Getting started
 
-1. Create a pipeline adding the following initial step in the console
+1. Create the initial pipeline:
     ```yaml
-     steps:
-      - command: "buildkite-agent pipeline upload"
-        label: ":pipeline:"
+    steps:
+      - label: ":buildkite:"
+        plugins:
+          - jwplayer/buildpipe#v0.8.0:
+              dynamic_pipeline: .buildkite/dynamic_pipeline.yml
     ```
 1. Generate deploy key and change permissions
     ```bash

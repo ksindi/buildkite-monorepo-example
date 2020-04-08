@@ -1,5 +1,0 @@
-steps:
-  - label: ":buildkite:"
-    plugins:
-      - jwplayer/buildpipe#v0.8.0:
-          dynamic_pipeline: .buildkite/dynamic_pipeline.yml
