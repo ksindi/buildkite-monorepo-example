@@ -14,7 +14,7 @@ The config shows steps the projects share with their associated commands. The co
     steps:
       - label: ":buildkite:"
         plugins:
-          - jwplayer/buildpipe#v0.8.0:
+          - jwplayer/buildpipe#v0.9.0:
               dynamic_pipeline: .buildkite/dynamic_pipeline.yml
     ```
 1. Generate deploy key and change permissions
