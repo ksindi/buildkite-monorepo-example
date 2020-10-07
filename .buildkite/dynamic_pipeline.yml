@@ -10,8 +10,7 @@ projects:
       - test
   - label: primer
     path: primer
-    skip:
-      - deploy-stg
+
 steps:
   - label: test
     env:

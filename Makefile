@@ -42,7 +42,7 @@ run-without-build:
 run: build run-without-build
 
 deploy-%: check-env
-	@echo "Deploying ${PROJECT_NAME} to $*"
+	@echo "Deploying ${app_name} to $*"
 
 # Exit hook to remove unused networks
 docker-network-prune:
