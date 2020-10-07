@@ -7,16 +7,16 @@ endif
 ifdef BUILDKITE_JOB_ID
 export BUILD_GIT_TAG=bk${BUILDKITE_BUILD_NUMBER}
 export JOB_ID:=${BUILDKITE_JOB_ID}
-export COMPOSE_PROJECT_NAME:=${PROJECT_NAME}-${BUILDKITE_JOB_ID}
+export COMPOSE_PROJECT_NAME:=${BUILDPIPE_PROJECT_NAME}-${BUILDKITE_JOB_ID}
 else
 export JOB_ID:=${app_name}-local
 export COMPOSE_PROJECT_NAME:=integration
 endif
 
-# PROJECT_NAME set by buildpipe
+# BUILDPIPE_PROJECT_NAME set by buildpipe
 check-env:
-ifndef PROJECT_NAME
-	$(error PROJECT_NAME is undefined)
+ifndef BUILDPIPE_PROJECT_NAME
+	$(error BUILDPIPE_PROJECT_NAME is undefined)
 endif
 
 # Implemented in project
@@ -42,7 +42,7 @@ run-without-build:
 run: build run-without-build
 
 deploy-%: check-env
-	@echo "Deploying ${app_name} to $*"
+	@echo "Deploying $BUILDPIPE_PROJECT_NAME to $*"
 
 # Exit hook to remove unused networks
 docker-network-prune:

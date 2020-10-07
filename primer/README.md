@@ -1,6 +1,6 @@
 # Primer
 
-An API to check primality of a given integer.
+An API that checks primality of a given integer.
 
 ## Testing
 
