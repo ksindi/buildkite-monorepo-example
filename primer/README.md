@@ -8,7 +8,7 @@ An API that checks the primality of a given integer.
 make test
 ```
 
-## Running locally
+## Run locally
 
 ```bash
 make local
