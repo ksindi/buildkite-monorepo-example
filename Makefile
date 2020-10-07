@@ -42,7 +42,7 @@ run-without-build:
 run: build run-without-build
 
 deploy-%: check-env
-	@echo "Deploying $BUILDPIPE_PROJECT_LABEL to $*"
+	@echo "Deploying ${BUILDPIPE_PROJECT_LABEL} to $*"
 
 # Exit hook to remove unused networks
 docker-network-prune:
