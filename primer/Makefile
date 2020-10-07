@@ -10,4 +10,4 @@ local: command=gunicorn -c gunicorn_config.py --log-level debug app:app
 local: run
 
 clean:
-	@echo "Some clean job like docker-compose kill or recoming artifacts"
+	@echo "Some clean job like docker-compose kill or removing artifacts"
